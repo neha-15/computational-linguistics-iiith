@@ -1,4 +1,4 @@
-var select = document.getElementById("language");
+let select = document.getElementById("language");
 
 var hindisen1 = ["राम और श्याम बाजार गयें", "राम और श्याम गयें बाजार", "बाजार गयें राम और श्याम", "गयें बाजार राम और श्याम"];
 var hindisen2 = ["राम सोया और श्याम भी", "श्याम सोया और राम भी", "सोया श्याम और राम भी", "सोया राम और श्याम भी"];
@@ -19,3 +19,13 @@ var englishsen9 = ["the teacher returned the book after she noticed the error", 
 var englishsen10 = ["I told her that I bought a book yesterday", "I told her yesterday that I bought a book", "yesterday I told her that I bought a book", "I bought a book that I told her yesterday", "I bought a book yesterday that I told her", "yesterday I bought a book that I told her"];
 var arrhindi = [hindisen1, hindisen2, hindisen3, hindisen4, hindisen5, hindisen6, hindisen7];
 var arrenglish = [englishsen1, englishsen2, englishsen3, englishsen4, englishsen5, englishsen6, englishsen7, englishsen8, englishsen9, englishsen10];
+
+function languagefun() {
+    if (select.value === '2') {
+        document.getElementById("langval").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
+        document.getElementById("langval1").innerHTML = "(select the buttons in proper order)";
+    } else if (select.value === '3') {
+        document.getElementById("langval").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
+        document.getElementById("langval1").innerHTML = "(select the buttons in proper order)";
+    }
+}
