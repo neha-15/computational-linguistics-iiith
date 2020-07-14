@@ -45,6 +45,9 @@ function formed(id, value) {
     document.getElementById(id).style.display = "none";
     document.getElementById("sen6").innerHTML = "<center><button id='reset' onclick='reset()'>Re-form the sentence</button></center>"
     c++;
+    if (b == c) {
+        document.getElementById("sen7").innerHTML = "<center><button id='correctness'  onclick='correctsen()'>Check the correctness</button></center>"
+    }
 }
 
 function reset() {
@@ -81,16 +84,16 @@ function languagefun() {
         i = shuffle(jumbled);
         b = 0;
         c = 0;
-        var bu = "";
-        var fbu = "";
+        var s1 = "";
+        var s2 = "";
         for (j = 0; j <= i.length - 1; j++) {
             val = i[j];
-            bu = "  <button id='btn" + j + "' onclick='formed(this.id,this.value)' value='" + val + "'>" + val + "</button>  ";
-            fbu += bu;
+            s1 = "  <button id='btn" + j + "' onclick='formed(this.id,this.value)' value='" + val + "'>" + val + "</button>  ";
+            s2 += s1;
             b++
 
         }
-        sen3.innerHTML = fbu.trim();
+        sen3.innerHTML = s2.trim();
 
     } else if (select.value === '3') {
         ans = "";
@@ -110,16 +113,16 @@ function languagefun() {
         i = shuffle(jumbled);
         b = 0;
         c = 0;
-        var bu = "";
-        var fbu = "";
+        var s1 = "";
+        var s2 = "";
         for (j = 0; j <= i.length - 1; j++) {
             val = i[j];
-            bu = "  <button id='btn" + j + "' onclick='formed(this.id,this.value)' value='" + val + "'>" + val + "</button>  ";
-            fbu += bu;
+            s1 = "  <button id='btn" + j + "' onclick='formed(this.id,this.value)' value='" + val + "'>" + val + "</button>  ";
+            s2 += s1;
             b++
 
         }
-        sen3.innerHTML = fbu.trim();
+        sen3.innerHTML = s2.trim();
 
     }
 }
