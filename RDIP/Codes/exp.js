@@ -1,5 +1,8 @@
+var c;
+var b, r;
+var ans = "";
+var i;
 let select = document.getElementById("language");
-
 var hindisen1 = ["राम और श्याम बाजार गयें", "राम और श्याम गयें बाजार", "बाजार गयें राम और श्याम", "गयें बाजार राम और श्याम"];
 var hindisen2 = ["राम सोया और श्याम भी", "श्याम सोया और राम भी", "सोया श्याम और राम भी", "सोया राम और श्याम भी"];
 var hindisen3 = ["मैंने उसे बताया कि राम सो रहा है", "मैंने उसे बताया कि सो रहा है राम", "उसे मैंने बताया कि राम सो रहा है", "उसे मैंने बताया कि सो रहा है राम", "मैंने बताया उसे कि राम सो रहा है", "मैंने बताया उसे कि सो रहा है राम", "उसे बताया मैंने कि राम सो रहा है", "उसे बताया मैंने कि सो रहा है राम", "बताया मैंने उसे कि राम सो रहा है", "बताया मैंने उसे कि सो रहा है राम", "बताया उसे मैंने कि राम सो रहा है", "बताया उसे मैंने कि सो रहा है राम"];
@@ -20,12 +23,91 @@ var englishsen10 = ["I told her that I bought a book yesterday", "I told her yes
 var arrhindi = [hindisen1, hindisen2, hindisen3, hindisen4, hindisen5, hindisen6, hindisen7];
 var arrenglish = [englishsen1, englishsen2, englishsen3, englishsen4, englishsen5, englishsen6, englishsen7, englishsen8, englishsen9, englishsen10];
 
+function shuffle(jumbled) {
+    var jumble = jumbled.split(" ");
+    var n = jumble.length,
+        temp, rand;
+    while (0 !== n) {
+        rand = Math.floor(Math.random() * n);
+        n = n - 1;
+        temp = jumble[n];
+        jumble[n] = jumble[rand];
+        jumble[rand] = temp;
+    }
+    return jumble;
+}
+var sentence = "";
+
+function fs(id, val) {
+    document.getElementById("sen4").innerHTML = "Formed Sentence";
+    sentence += val + " ";
+    document.getElementById("sen5").innerHTML = sentence;
+    document.getElementById(id).style.display = "none";
+    document.getElementById("sen6").innerHTML = "<center><button id='reform' onclick='rs()'>Re-form the sentence</button></center>"
+    c++;
+    if (b == c) {
+        document.getElementById("sen7").innerHTML = "<center><button id='correctness'  onclick='cs()'>Check the correctness</button></center>"
+    }
+}
+
 function languagefun() {
     if (select.value === '2') {
+        ans = "";
+        // document.getElementById("correctans").innerHTML = "";
+        sentence = "";
+        document.getElementById("sen2").innerHTML = "";
+        document.getElementById("sen3").innerHTML = "";
+        document.getElementById("sen4").innerHTML = "";
+        document.getElementById("sen5").innerHTML = "";
+        document.getElementById("sen6").innerHTML = "";
+        document.getElementById("sen7").innerHTML = "";
+        document.getElementById("sen8").innerHTML = "";
         document.getElementById("langval").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
         document.getElementById("langval1").innerHTML = "(select the buttons in proper order)";
+        r = Math.floor(Math.random() * arrenglish.length);
+        var jumbled = arrenglish[r][0];
+        i = shuffle(jumbled);
+        b = 0;
+        c = 0;
+        var bu = "";
+        var fbu = "";
+        for (j = 0; j < i.length - 1; j++) {
+            val = i[j];
+            bu = "  <button id='btn" + i + "' onclick='fs(this.id,this.val)' val='" + val + "'>" + val + "</button>  ";
+            fbu += bu;
+            b++
+
+        }
+        sen3.innerHTML = fbu.trim();
+
     } else if (select.value === '3') {
+        ans = "";
+        // document.getElementById("correctans").innerHTML = "";
+        sentence = "";
+        document.getElementById("sen2").innerHTML = "";
+        document.getElementById("sen3").innerHTML = "";
+        document.getElementById("sen4").innerHTML = "";
+        document.getElementById("sen5").innerHTML = "";
+        document.getElementById("sen6").innerHTML = "";
+        document.getElementById("sen7").innerHTML = "";
+        document.getElementById("sen8").innerHTML = "";
         document.getElementById("langval").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
         document.getElementById("langval1").innerHTML = "(select the buttons in proper order)";
+        r = Math.floor(Math.random() * arrhindi.length);
+        var jumbled = arrhindi[r][0];
+        i = shuffle(jumbled);
+        b = 0;
+        c = 0;
+        var bu = "";
+        var fbu = "";
+        for (j = 0; j < i.length - 1; j++) {
+            val = i[j];
+            bu = "  <button id='btn" + i + "' onclick='fs(this.id,this.val)' val='" + val + "'>" + val + "</button>  ";
+            fbu += bu;
+            b++
+
+        }
+        sen3.innerHTML = fbu.trim();
+
     }
 }
