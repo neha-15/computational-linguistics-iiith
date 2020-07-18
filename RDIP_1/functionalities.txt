@@ -1,0 +1,5 @@
+*Drop down menu to select the corpus.
+*table with 2 rows and columns for tockens and types.
+*a submit button.
+*if the values are wrong the background has to become red.
+if they are correct the background should become green.
