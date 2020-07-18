@@ -128,7 +128,7 @@ function hide() {
 function togg() {
     while (document.getElementById("correctan").innerHTML == "") {
 
-        document.getElementById('sen10').innerHTML = "<center><button id='showansbtn' onclick='hide()'>hide correct answer</button></center>"
+        document.getElementById('sen10').innerHTML = "<center><button id='showansbtn' onclick='hide()'>hide correct sentence</button></center>"
         document.getElementById("correctan").innerHTML = ans;
     }
 }
