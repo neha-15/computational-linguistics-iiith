@@ -39,7 +39,7 @@ function verify() {
     var str = s.join(" ");
     var str1 = str.toLowerCase();
     var str2 = str1.split();
-    var uw = new Set(s);
+    var uw = new Set(str2);
     unic = uw.size();
     var tocken = document.getElementById('ans1_const').value;
     var type = document.getElementById("ans2_const").value;
@@ -48,9 +48,16 @@ function verify() {
     } else {
         document.getElementById('tocken').style.backgroundColor = "Red";
     }
-    if (uc == type) {
+    if (unic == type) {
         document.getElementById('type').style.backgroundColor = "Green";
     } else {
         document.getElementById('type').style.backgroundColor = "Red";
     }
+    if ((wordc == token) && (unic == type)) {
+        document.getElementById("sen5").innerHTML = "<center><font color='Green' style = 'font-size:20px'>Right answer</font></center>"
+        document.getElementById("sen7").innerHTML = "<button  onclick='continue()'>Continue</button>";
+    } else {
+        document.getElementById("sen6").innerHTML = "<center><font color='Red' style = 'font-size:20px'>Wrong answer</font></center>"
+    }
+
 }
